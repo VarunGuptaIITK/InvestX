@@ -1,0 +1,69 @@
+import pandas as pd
+import time
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import StaleElementReferenceException
+
+def scrape_option_chain(a,b):
+    driver = webdriver.Chrome()
+    driver.get('https://www.convergenceindia.org/exhibitors-and-participants-convergence-india.aspx')
+    time.sleep(2)
+
+   
+    option_chain = driver.find_element(By.CSS_SELECTOR, '#app > div.application--wrap > main > div > div > div > div > div.home > div.container > div.layout > ul > li > div.v-expansion-panel__header > div.text-xs-center.title')
+    time.sleep(2)
+    option_chain.click()
+
+    date_1_variable = driver.find_element(By.CSS_SELECTOR, a)
+    date_1_variable.click()
+
+    CallLTP = driver.find_elements(By.XPATH, '//tbody/tr/td[1]')
+    itmprob = driver.find_elements(By.XPATH, '//tbody/tr/td[2]')
+    CallIv = driver.find_elements(By.XPATH, '//tbody/tr/td[3]')
+    CallDelta = driver.find_elements(By.XPATH, '//tbody/tr/td[4]')
+    StrikePrice = driver.find_elements(By.XPATH, '//tbody/tr/td[5]')
+    PutDelta = driver.find_elements(By.XPATH, '//tbody/tr/td[6]')
+    PutIV = driver.find_elements(By.XPATH, '//tbody/tr/td[7]')
+    ITMProb = driver.find_elements(By.XPATH, '//tbody/tr/td[8]')
+    PutLTP = driver.find_elements(By.XPATH, '//tbody/tr/td[9]')
+    
+
+    option_data = []
+    for i in range(len(StrikePrice)):
+        try:
+            row = {
+                'CallLTP': CallLTP[i].text,
+                'itmprob': itmprob[i].text,
+                'CallIv': CallIv[i].text,
+                'CallDelta': CallDelta[i].text,
+                'StrikePrice': StrikePrice[i].text,
+                'PutDelta': PutDelta[i].text,
+                'PutIV': PutIV[i].text,
+                'ITMProb': ITMProb[i].text,
+                'PutLTP': PutLTP[i].text
+            }
+            option_data.append(row)
+            print(row)
+        except StaleElementReferenceException:
+            time.sleep(2)
+            CallLTP = driver.find_elements(By.XPATH, '//tbody/tr/td[1]')
+            itmprob = driver.find_elements(By.XPATH, '//tbody/tr/td[2]')
+            CallIv = driver.find_elements(By.XPATH, '//tbody/tr/td[3]')
+            CallDelta = driver.find_elements(By.XPATH, '//tbody/tr/td[4]')
+            StrikePrice = driver.find_elements(By.XPATH, '//tbody/tr/td[5]')
+            PutDelta = driver.find_elements(By.XPATH, '//tbody/tr/td[6]')
+            PutIV = driver.find_elements(By.XPATH, '//tbody/tr/td[7]')
+            ITMProb = driver.find_elements(By.XPATH, '//tbody/tr/td[8]')
+            PutLTP = driver.find_elements(By.XPATH, '//tbody/tr/td[9]')
+            option_data.append(row)
+            print(row)
+
+    df = pd.DataFrame(option_data)
+    print(df)
+
+    # Corrected file path using raw string literal
+    output_file = r'C:\Users\28pra\OneDrive\Desktop\project\FAC_project\New folder\{}.csv'.format(b)
+    df.to_csv(output_file, index=False)
+
+    driver.quit()

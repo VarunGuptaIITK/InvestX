@@ -1,0 +1,382 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>email template</title>
+  <style>
+    @font-face {
+      /* CircularXXWeb-Light */
+      font-family: 'Circular';
+      src: url('https://static-assets.lusha.com/resources/fonts/circular/CircularXXWeb-Light.woff2') format('woff2'),
+        url('https://static-assets.lusha.com/resources/fonts/circular/CircularXXWeb-Light.woff') format('woff');
+      font-style: normal;
+      font-weight: 300;
+    }
+
+    @font-face {
+      /* CircularXXWeb-Light */
+      font-family: 'Circular';
+      src: url('https://static-assets.lusha.com/resources/fonts/circular/CircularXXWeb-Light.woff2') format('woff2'),
+        url('https://static-assets.lusha.com/resources/fonts/circular/CircularXXWeb-Light.woff') format('woff');
+      font-style: normal;
+      font-weight: normal;
+    }
+
+    @font-face {
+      /* CircularXXWeb-Medium */
+      font-family: 'Circular';
+      src: url('https://static-assets.lusha.com/resources/fonts/circular/CircularXXWeb-Medium.woff2') format('woff2'),
+        url('https://static-assets.lusha.com/resources/fonts/circular/CircularXXWeb-Medium.woff') format('woff'),
+        url('https://static-assets.lusha.com/resources/fonts/circular/CircularXXTT-Medium.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    /*TODO - remove this weight after deprecation of ui-comp-1 we should only use normal/400, 500, bold weights*/
+    @font-face {
+      /* CircularXXWeb-Medium */
+      font-family: 'Circular';
+      src: url('https://static-assets.lusha.com/resources/fonts/circular/CircularXXWeb-Medium.woff2') format('woff2'),
+        url('https://static-assets.lusha.com/resources/fonts/circular/CircularXXWeb-Medium.woff') format('woff'),
+        url('https://static-assets.lusha.com/resources/fonts/circular/CircularXXTT-Medium.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    @font-face {
+      /* CircularXXWeb-Bold*/
+      font-family: 'Circular';
+      src: url('https://static-assets.lusha.com/resources/fonts/circular/CircularXXWeb-Bold.woff2') format('woff2'),
+        url('https://static-assets.lusha.com/resources/fonts/circular/CircularXXWeb-Bold.woff') format('woff');
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Circular';
+      src: url('https://static-assets.lusha.com/resources/fonts/circular/CircularXXWeb-Bold.woff2') format('woff2'),
+        url('https://static-assets.lusha.com/resources/fonts/circular/CircularXXWeb-Bold.woff') format('woff');
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    @font-face {
+      font-family: 'Circular';
+      src: url('https://static-assets.lusha.com/resources/fonts/circular/CircularXXWeb-Black.woff2') format('woff2'),
+        url('https://static-assets.lusha.com/resources/fonts/circular/CircularXXWeb-Black.woff') format('woff');
+      font-style: normal;
+      font-weight: 900;
+    }
+
+    @media only screen and (max-width: 620px) {
+      table[class=body] h1 {
+        font-size: 28px !important;
+        margin-bottom: 10px !important;
+      }
+
+      table[class=body] p,
+      table[class=body] ul,
+      table[class=body] ol,
+      table[class=body] td,
+      table[class=body] span,
+      table[class=body] a {
+        font-size: 16px !important;
+      }
+
+      table[class=body] .wrapper,
+      table[class=body] .article {
+        padding: 10px !important;
+      }
+
+      table[class=body] .content {
+        padding: 0 !important;
+      }
+
+      table[class=body] .container {
+        padding: 0 !important;
+        width: 100% !important;
+      }
+
+      table[class=body] .main {
+        border-left-width: 0 !important;
+        border-radius: 0 !important;
+        border-right-width: 0 !important;
+      }
+
+      table[class=body] .btn table {
+        width: 60% !important;
+      }
+
+      table[class=body] .btn a {
+        width: 100% !important;
+      }
+
+      table[class=body] .img-responsive {
+        height: auto !important;
+        max-width: 100% !important;
+        width: auto !important;
+      }
+    }
+
+    @media only screen and (max-width: 620px) {
+      table[class=body] h1 {
+        font-size: 28px !important;
+        margin-bottom: 10px !important;
+      }
+
+      table[class=body] p,
+      table[class=body] ul,
+      table[class=body] ol,
+      table[class=body] td,
+      table[class=body] span,
+      table[class=body] a {
+        font-size: 16px !important;
+      }
+
+      table[class=body] .wrapper,
+      table[class=body] .article {
+        padding: 10px !important;
+      }
+
+      table[class=body] .content {
+        padding: 0 !important;
+      }
+
+      table[class=body] .container {
+        padding: 0 !important;
+        width: 100% !important;
+      }
+
+      table[class=body] .main {
+        border-left-width: 0 !important;
+        border-radius: 0 !important;
+        border-right-width: 0 !important;
+      }
+
+      table[class=body] .btn table {
+        width: 60% !important;
+      }
+
+      table[class=body] .btn a {
+        width: 100% !important;
+      }
+
+      table[class=body] .img-responsive {
+        height: auto !important;
+        max-width: 100% !important;
+        width: auto !important;
+      }
+    }
+
+    @media all {
+      .ExternalClass {
+        width: 100%;
+      }
+
+      .ExternalClass,
+      .ExternalClass p,
+      .ExternalClass span,
+      .ExternalClass font,
+      .ExternalClass td,
+      .ExternalClass div {
+        line-height: 100%;
+      }
+
+      .apple-link a {
+        color: inherit !important;
+        font-family: inherit !important;
+        font-size: inherit !important;
+        font-weight: 500 !important;
+        line-height: inherit !important;
+        text-decoration: none !important;
+      }
+
+      .btn-primary table td:hover {
+        background-color: #0948D1 !important;
+      }
+
+      .btn-primary a:hover {
+        background-color: #0948D1 !important;
+        border-color: #0948D1 !important;
+      }
+
+      .href-email:hover {
+          text-decoration: underline !important;
+        }
+    }
+  </style>
+</head>
+
+<body class=""
+  style="background-color: #F6F6F6; font-family: 'Roboto', sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #151417;">
+  <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body"
+    style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #F6F6F6; width: 100%; font-family: 'Roboto', sans-serif; color: #151417;"
+    width="100%" bgcolor="#F6F6F6">
+    <tr>
+      <td align="center" style="font-family: 'Roboto', sans-serif; font-size: 14px; vertical-align: top;" valign="top">
+        &nbsp;</td>
+      <td class="container" align="center"
+        style="font-family: 'Roboto', sans-serif; font-size: 14px; vertical-align: top; display: block; max-width: 600px; padding: 10px; width: 600px; margin: 0 auto;"
+        width="600" valign="top">
+        <table style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;"
+          width="100%">
+          <tr>
+            <td align="center" style="font-family: 'Roboto', sans-serif; font-size: 14px; vertical-align: top;"
+              valign="top">
+              <div class="content"
+                style="box-sizing: border-box; display: block; margin: 0 auto; max-width: 600px; padding: 10px;">
+                <div class="logo"
+                  style="width: 92px; height: 32px; margin: auto; padding-top: 20px; padding-bottom: 20px;"><img
+                    src="https://s3.amazonaws.com/lusha-newsletter/lusha_logo_large.png" alt=""
+                    style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;">
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+
+        <table role="presentation" class="main"
+          style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background: #FFFFFF; border-radius: 8px; width: 100%;"
+          width="100%">
+
+          <!-- START MAIN CONTENT AREA -->
+          <tr>
+            <td class="wrapper"
+              style="font-family: 'Roboto', sans-serif; font-size: 14px; vertical-align: top; box-sizing: border-box;padding: 48px 48px 32px 48px;"
+              valign="top">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+                style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;"
+                width="100%">
+                <tr class="mainTitleRow">
+                  <td style="font-family: 'Roboto', sans-serif; font-size: 14px; vertical-align: top;" valign="top">
+                    <p style="font-family: 'Roboto';
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 24px;
+          text-align: center;
+color: #151417;">Complete your registration</p>
+
+<p style="font-family: 'Roboto';
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 20px;
+
+align-items: center;
+text-align: center;
+
+color: #151417;
+          
+margin: 0; margin-bottom: 24px; margin-top: 24px;">
+Please enter the verification code below in the <br/> sign-up form to verify your email.</p>
+
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; width: 100%;" width="100%">
+  <tbody>
+  <tr>
+    <td align="center" style="font-family: 'Roboto', sans-serif; font-size: 14px; vertical-align: top; padding-bottom: 15px;" valign="top">
+      <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;">
+        <tbody>
+        <tr>
+          <td style="
+width:320px;
+height:80px;
+border: 1px solid rgba(197, 197, 197, 0.5);
+box-sizing: border-box;
+border-radius: 8px;" valign="top" align="center">
+            <div style="font-family: 'Roboto', sans-serif; padding:24px 0px; text-align: center; color: #151417; font-weight: 500; font-size: 32px;" >230447</div></td>
+        </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<p style="font-family: 'Roboto';
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 20px;
+
+align-items: center;
+text-align: center;
+
+color: #151417;
+          
+margin: 0; margin-bottom: 8px; margin-top: 16px">
+Or click "Activate account" button to verify your email</p>
+
+<table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" role="presentation" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; width: 100%;" width="100%">
+  <tbody>
+  <tr>
+    <td align="center" style="font-family: 'Roboto', sans-serif; font-size: 14px; vertical-align: top; padding: 17px 0 32px 0;" valign="top">
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;">
+        <tbody>
+        <tr>
+          <td align="center" bgcolor="#0655FF" style="font-family: 'Roboto', sans-serif; font-size: 14px; vertical-align: top; border-radius: 4px; text-align: center; background-color: #0655FF;" valign="top"><a href="https://auth.lusha.com/confirm?id=d0011d58-325c-430a-9629-7fbac2ca3c9c&code=230447" style="
+                              border-radius: 4px;
+                              box-sizing: border-box;
+                              cursor: pointer;
+                              display: inline-block;
+                              font-size: 16px;
+                              font-weight: bold;
+                              white-space: nowrap;
+                              margin: 0;
+                              padding: 10px 20px;
+                              height: 40px;
+                              line-height: 1;
+                              text-decoration: none;
+                              background-color: #0655FF;
+                              display: table-cell;
+                              vertical-align: middle;
+                              color: #ffffff;" target="_blank">Activate account</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- END MAIN CONTENT AREA -->
+        </table>
+
+        <!-- START FOOTER -->
+        <div class="footer" style="clear: both; margin-top: 10px; text-align: center; width: 100%;">
+          <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+            style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;" width="100%">
+            <tr>
+              <td class="content-block"
+                style="font-family: 'Roboto', sans-serif; vertical-align: top; padding-bottom: 10px; padding-top: 10px; color: #151417; font-size: 12px; text-align: center;"
+                valign="top" align="center">
+                <div class="heartTxt">Sent with <span class="heartSpan"
+                    style="font-size: 12px; text-align: center; color: #c0392b;">&hearts;</span> <span class="spnFooter"
+                    style="display: inline-block; color: #151417; font-size: 12px; text-align: center;">from
+                    Lusha</span></div>
+                <div class="address" style="margin-top: 4px;">Lusha systems Inc. 800 Boylston Street, Suite 1410 Boston, MA 02199</div>
+
+              </td>
+            </tr>
+
+          </table>
+        </div>
+        <!-- END FOOTER -->
+
+        <!-- END CENTERED WHITE CONTAINER -->
+
+      </td>
+      <td style="font-family: 'Roboto', sans-serif; font-size: 14px; vertical-align: top;" valign="top">&nbsp;</td>
+    </tr>
+  </table>
+</body>
+
+</html>

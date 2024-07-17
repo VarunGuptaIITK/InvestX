@@ -1,0 +1,27 @@
+import os
+import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+current_directory = os.path.dirname(os.path.abspath(__file__))
+driver_path = os.path.join(current_directory, 'chromedriver')
+os.environ["webdriver.chrome.driver"] = driver_path
+driver = webdriver.Chrome()
+
+url = "https://opstra.definedge.com/strategy-builder"
+driver.get(url)
+
+# Find the element with class "text-xs-center title"
+element = driver.find_element(By.CLASS_NAME, "text-xs-center.title")
+
+# Extract the text from the element
+data = element.text
+print("Extracted Data:")
+print(data)
+
+# Add a delay of 10 seconds before closing the browser
+time.sleep(1000)
+
+# Close the browser window
+driver.quit()
+r
